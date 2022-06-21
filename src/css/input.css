@@ -1,0 +1,572 @@
+@tailwind base;
+@tailwind components;
+
+/* colors + base typography */
+@layer base {
+  /* --------------------------------
+
+  (START) Global editor code https://codyhouse.co/ds/globals/colors
+
+  -------------------------------- */
+  :root, [data-theme="default"] {
+    /* main */
+    --color-primary-darker: 250 84% 38%;
+    --color-primary-dark: 250 84% 46%;
+    --color-primary: 250 84% 54%;
+    --color-primary-light: 250 84% 60%;
+    --color-primary-lighter: 250 84% 67%;
+
+    --color-accent-darker: 342 89% 38%;
+    --color-accent-dark: 342 89% 43%;
+    --color-accent: 342 89% 48%;
+    --color-accent-light: 342 89% 56%;
+    --color-accent-lighter: 342 89% 62%;
+
+    --color-black: 231 15% 9%;
+    --color-white: 0 0% 100%;
+
+    /* feedback */
+    --color-warning-darker: 35 79% 48%;
+    --color-warning-dark: 35 79% 56%;
+    --color-warning: 35 79% 66%;
+    --color-warning-light: 35 79% 74%;
+    --color-warning-lighter: 35 79% 82%;
+
+    --color-success-darker: 170 78% 26%;
+    --color-success-dark: 170 78% 31%;
+    --color-success: 170 78% 36%;
+    --color-success-light: 170 78% 42%;
+    --color-success-lighter: 170 78% 47%;
+
+    --color-error-darker: 342 89% 38%;
+    --color-error-dark: 342 89% 43%;
+    --color-error: 342 89% 48%;
+    --color-error-light: 342 89% 56%;
+    --color-error-lighter: 342 89% 62%;
+
+    /* background */
+    --color-floor-darker: 240 4% 90%;
+    --color-floor-dark: 240 4% 95%;
+    --color-floor: 0 0% 100%;
+    --color-floor-light: 0 0% 100%;
+    --color-floor-lighter: 0 0% 100%;
+
+    /* color contrasts */
+    --color-contrast-lower: 240 4% 85%;
+    --color-contrast-low: 240 4% 65%;
+    --color-contrast-medium: 225 4% 47%;
+    --color-contrast-high: 230 7% 23%;
+    --color-contrast-higher: 230 13% 9%;
+  }
+
+  [data-theme="dark"] {
+    /* main */
+    --color-primary-darker: 250 100% 60%;
+    --color-primary-dark: 250 100% 64%;
+    --color-primary: 250 100% 69%;
+    --color-primary-light: 250 100% 72%;
+    --color-primary-lighter: 250 100% 76%;
+
+    --color-accent-darker: 342 92% 41%;
+    --color-accent-dark: 342 92% 47%;
+    --color-accent: 342 92% 54%;
+    --color-accent-light: 342 92% 60%;
+    --color-accent-lighter: 342 92% 65%;
+
+    --color-black: 230 13% 9%;
+    --color-white: 0 0% 100%;
+
+    /* feedback */
+    --color-warning-darker: 35 79% 48%;
+    --color-warning-dark: 35 79% 56%;
+    --color-warning: 35 79% 66%;
+    --color-warning-light: 35 79% 74%;
+    --color-warning-lighter: 35 79% 82%;
+
+    --color-success-darker: 170 78% 26%;
+    --color-success-dark: 170 78% 31%;
+    --color-success: 170 78% 36%;
+    --color-success-light: 170 78% 42%;
+    --color-success-lighter: 170 78% 47%;
+
+    --color-error-darker: 342 92% 41%;
+    --color-error-dark: 342 92% 47%;
+    --color-error: 342 92% 54%;
+    --color-error-light: 342 92% 60%;
+    --color-error-lighter: 342 92% 65%;
+
+    /* background */
+    --color-floor-darker: 232 7% 8%;
+    --color-floor-dark: 233 8% 11%;
+    --color-floor: 232 11% 15%;
+    --color-floor-light: 233 8% 19%;
+    --color-floor-lighter: 232 7% 22%;
+
+    /* color contrasts */
+    --color-contrast-lower: 240 6% 26%;
+    --color-contrast-low: 240 3% 41%;
+    --color-contrast-medium: 231 3% 57%;
+    --color-contrast-high: 240 5% 82%;
+    --color-contrast-higher: 240 100% 99%;
+
+    /* font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  /* --------------------------------
+
+  (END) Global editor code
+
+  -------------------------------- */
+
+  body, [data-theme] {
+    @apply bg-floor text-contrast-high;
+  }
+
+  /* --------------------------------
+
+  (START) Global editor code https://codyhouse.co/ds/globals/typography
+
+  -------------------------------- */
+  
+  body {
+    @apply font-sans font-normal;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-bold;
+  }
+
+  /* --------------------------------
+
+  (END) Global editor code
+
+  -------------------------------- */
+
+  body {
+    @apply text-base lg:text-xl;
+  }
+
+  h1, h2, h3, h4 {
+    @apply text-contrast-higher;
+  }
+
+  h1 {
+    @apply text-3xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl lg:text-3xl;
+  }
+
+  h4 {
+    @apply text-lg lg:text-2xl;
+  }
+
+  small {
+    @apply text-sm lg:text-base
+  }
+
+  a, .link {
+    @apply text-primary underline;
+  }
+  
+  strong {
+    @apply font-bold;
+  }
+  
+  s {
+   @apply line-through;
+  }
+  
+  u {
+    @apply underline;
+  }
+
+  mark {
+    @apply bg-accent/20 text-inherit;
+  }
+
+  /* no-js support */
+  html:not(.js) .no-js\:is-hidden {
+    display: none !important;
+  }
+}
+
+/* button components */
+
+/* --------------------------------
+
+  (START) Global editor code https://codyhouse.co/ds/globals/buttons
+
+-------------------------------- */
+@layer components {
+  .btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 1em;
+    @apply px-3 lg:px-5 py-1.5 lg:py-2 rounded bg-floor-dark text-contrast-higher;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all 0.2s ease;
+    will-change: transform;
+  }
+
+  .btn:focus-visible {
+    box-shadow: 0 0 0 2px hsl(var(--color-floor)), 0px 0px 0px 2px hsla(var(--color-contrast-higher) / 0.15);
+    outline: none;
+  }
+
+  .btn:active {
+    transform: translateY(2px);
+  }
+
+  /* themes */
+  .btn--primary {
+    background: hsl(var(--color-primary));
+    color: hsl(var(--color-white));
+    box-shadow: inset 0px 1px 0px hsla(var(--color-white) / 0.15), 0px 1px 3px hsla(var(--color-primary-darker) / 0.25), 0px 2px 6px hsla(var(--color-primary-darker) / 0.1), 0px 6px 10px -2px hsla(var(--color-primary-darker) / 0.25);
+  }
+
+  .btn--primary:hover {
+    box-shadow: inset 0px 1px 0px hsla(var(--color-white) / 0.15), 0px 1px 2px hsla(var(--color-primary-darker) / 0.25), 0px 1px 4px hsla(var(--color-primary-darker) / 0.1), 0px 3px 6px -2px hsla(var(--color-primary-darker) / 0.25);
+  }
+
+  .btn--primary:focus-visible {
+    box-shadow: inset 0px 1px 0px hsla(var(--color-white) / 0.15), 0px 1px 2px hsla(var(--color-primary-darker) / 0.25), 0px 1px 4px hsla(var(--color-primary-darker) / 0.1), 0px 3px 6px -2px hsla(var(--color-primary-darker) / 0.25), 0 0 0 2px hsl(var(--color-floor)), 0px 0px 0px 4px hsl(var(--color-primary));
+  }
+
+  .btn--subtle {
+    background: hsl(var(--color-floor-lighter));
+    color: hsl(var(--color-contrast-higher));
+    box-shadow: inset 0px 1px 0px hsla(var(--color-white) / 0.1), 0px 0px 0px 1px hsla(var(--color-black) / 0.02), 0px 1px 3px -1px hsla(var(--color-black) / 0.2), 0 0.3px 0.4px rgba(0, 0, 0, 0.025), 0 0.9px 1.5px rgba(0, 0, 0, 0.05), 0 3.5px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn--subtle:hover {
+    background: hsl(var(--color-floor-light));
+    box-shadow: inset 0px 1px 0px hsla(var(--color-white) / 0.1), 0px 0px 0px 1px hsla(var(--color-black) / 0.02), 0px 1px 3px -1px hsla(var(--color-black) / 0.2), 0 0.1px 0.3px rgba(0, 0, 0, 0.06),
+    0 1px 2px rgba(0, 0, 0, 0.12);
+  }
+  
+  .btn--subtle:focus-visible {
+    box-shadow: inset 0px 1px 0px hsla(var(--color-white) / 0.1), 0px 0px 0px 1px hsla(var(--color-black) / 0.02), 0px 1px 3px -1px hsla(var(--color-black) / 0.2), 0 0.1px 0.3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12), 0 0 0 2px hsl(var(--color-floor)), 0 0 0 4px hsl(var(--color-contrast-high));
+  }
+
+  .btn--accent {
+    background: hsl(var(--color-accent));
+    color: hsl(var(--color-white));
+    box-shadow: inset 0px 1px 0px hsla(var(--color-white) / 0.15), 0px 1px 3px hsla(var(--color-accent-darker) / 0.25), 0px 2px 6px hsla(var(--color-accent-darker) / 0.1), 0px 6px 10px -2px hsla(var(--color-accent-darker) / 0.25);
+  }
+  
+  .btn--accent:hover {
+    background: hsl(var(--color-accent-light));
+    box-shadow: inset 0px 1px 0px hsla(var(--color-white) / 0.15), 0px 1px 2px hsla(var(--color-accent-darker) / 0.25), 0px 1px 4px hsla(var(--color-accent-darker) / 0.1), 0px 3px 6px -2px hsla(var(--color-accent-darker) / 0.1);
+  }
+  
+  .btn--accent:focus-visible {
+    box-shadow: inset 0px 1px 0px hsla(var(--color-white) / 0.15), 0px 1px 2px hsla(var(--color-accent-darker) / 0.25), 0px 1px 4px hsla(var(--color-accent-darker) / 0.1), 0px 3px 6px -2px hsla(var(--color-accent-darker) / 0.1), 0 0 0 2px hsl(var(--color-floor)), 0 0 0 4px hsl(var(--color-accent));
+  }
+
+  /* feedback */
+  .btn--disabled, .btn[disabled], .btn[readonly] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+/* --------------------------------
+
+  (END) Global editor code
+
+-------------------------------- */
+
+/* input/form style  */
+
+/* --------------------------------
+
+  (START) Global editor code https://codyhouse.co/ds/globals/forms
+
+-------------------------------- */
+@layer components {
+  .form-control {
+    font-size: 1em;
+    @apply px-2 lg:px-3 py-1.5 lg:py-2 rounded bg-floor-dark;
+    line-height: 1.2;
+    box-shadow: inset 0px 0px 0px 1px hsl(var(--color-contrast-lower));
+    transition: all 0.2s ease;
+  }
+
+  .form-control::placeholder {
+    opacity: 1;  
+    @apply text-contrast-low;
+  }
+
+  .form-control:focus, .form-control:focus-within {
+    @apply bg-floor;
+    box-shadow: inset 0px 0px 0px 1px hsla(var(--color-contrast-lower) / 0), 0px 0px 0px 2px hsl(var(--color-primary)), 0 0.3px 0.4px rgba(0, 0, 0, 0.025), 0 0.9px 1.5px rgba(0, 0, 0, 0.05), 0 3.5px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+
+  .form-control--disabled, .form-control[disabled], .form-control[readonly] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .form-control[aria-invalid="true"], .form-control.form-control--error {
+    box-shadow: inset 0px 0px 0px 1px hsla(var(--color-contrast-lower) / 0), 0px 0px 0px 2px hsl(var(--color-error));
+  }
+
+  .form-control[aria-invalid="true"]:focus, .form-control[aria-invalid="true"]:focus-within,
+  .form-control.form-control--error:focus, .form-control.form-control--error:focus-within {
+    box-shadow: inset 0px 0px 0px 1px hsla(var(--color-contrast-lower) / 0), 0px 0px 0px 2px hsl(var(--color-error)), 0 0.3px 0.4px rgba(0, 0, 0, 0.025), 0 0.9px 1.5px rgba(0, 0, 0, 0.05), 0 3.5px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-legend {
+    @apply mb-3 lg:mb-5 text-contrast-higher text-lg lg:text-2xl;
+  }
+  
+  .form-label {
+    display: inline-block;
+    @apply text-sm lg:text-base;
+  }
+}
+
+/* --------------------------------
+
+  (END) Global editor code
+
+-------------------------------- */
+
+/* text component + icon + inner shadow */
+@layer components {
+  /* Custom text component classes */
+  .text-component {
+    --line-height-multiplier: 1;
+    --text-space-y-multiplier: 1;
+    --heading-line-height: 1.2;
+    --body-line-height: 1.4;
+  }
+  .text-component.leading-extra-tight {
+    line-height: normal;
+    --heading-line-height: 1;
+    --body-line-height: 1.1;
+  }
+  .text-component.leading-tight {
+    --heading-line-height: 1.1;
+    --body-line-height: 1.2;
+    line-height: normal;
+  }
+  .text-component.leading-snug {
+    --heading-line-height: 1.15;
+    --body-line-height: 1.4;
+    line-height: normal;
+  }
+  .text-component.leading-normal {
+    --heading-line-height: 1.22;
+    --body-line-height: 1.58;
+    line-height: normal;
+  }
+  .text-component.leading-relaxed {
+    --heading-line-height: 1.3;
+    --body-line-height: 1.72;
+    line-height: normal;
+  }
+
+  .text-component.text-space-y-xxs {
+    --text-space-y-multiplier: 0.25;
+  }
+  .text-component.text-space-y-xs {
+    --text-space-y-multiplier: 0.5;
+  }
+  .text-component.text-space-y-sm {
+    --text-space-y-multiplier: 0.75;
+  }
+  .text-component.text-space-y-md {
+    --text-space-y-multiplier: 1.25;
+  }
+  .text-component.text-space-y-lg {
+    --text-space-y-multiplier: 1.5;
+  }
+  .text-component.text-space-y-xl {
+    --text-space-y-multiplier: 1.75;
+  }
+  .text-component.text-space-y-xxl {
+    --text-space-y-multiplier: 2;
+  }
+  
+  .text-component :where(h1), 
+  .text-component :where(h2), 
+  .text-component :where(h3), 
+  .text-component :where(h4) {
+    line-height: calc(var(--heading-line-height) * var(--line-height-multiplier, 1));
+    margin-bottom: calc(0.3125em * var(--text-space-y-multiplier, 1));
+  }
+  
+  .text-component :where(h2), 
+  .text-component :where(h3), 
+  .text-component :where(h4) {
+    margin-top: calc(0.9375em * var(--text-space-y-multiplier, 1));
+  }
+  
+  .text-component p, 
+  .text-component blockquote, 
+  .text-component ul li, 
+  .text-component ol li {
+    line-height: calc(var(--body-line-height) * var(--line-height-multiplier, 1));
+  }
+  
+  .text-component ul, 
+  .text-component ol, 
+  .text-component p, 
+  .text-component blockquote {
+    margin-bottom: calc(0.9375em * var(--text-space-y-multiplier, 1));
+  }
+  
+  .text-component :where(ul), 
+  .text-component :where(ol) {
+    list-style-position: inside;
+  }
+  
+  .text-component ul ul, 
+  .text-component ul ol,
+  .text-component ol ul, 
+  .text-component ol ol {
+    padding-left: 1em;
+    margin-bottom: 0;
+  }
+  
+  .text-component :where(ul) {
+    list-style-type: disc;
+  }
+  
+  .text-component :where(ol) {
+    list-style-type: decimal;
+  }
+  
+  .text-component :where(img) {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .text-component :where(figcaption) {
+    @apply text-contrast-low text-sm lg:text-base;
+    text-align: center;
+    margin-top: 0.5em;
+  }
+  
+  .text-component :where(em) { 
+    font-style: italic;
+  }
+  
+  .text-component :where(hr) {
+    @apply bg-contrast-lower;
+    height: 1px;
+    margin-top: calc(1.875em * var(--text-space-y-multiplier, 1));
+    margin-bottom: calc(1.875em * var(--text-space-y-multiplier, 1));
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+  }
+  
+  .text-component > *:first-child {
+    margin-top: 0;
+  }
+  
+  .text-component > *:last-child {
+    margin-bottom: 0;
+  }
+  
+  .text-component :where(blockquote) {
+    padding-left: 1em;
+    @apply border-l-4 border-contrast-lower;
+    font-style: italic;
+  }
+  
+  .article { /* e.g., blog posts */
+    --body-line-height: 1.58;
+    --text-space-y-multiplier: 1.2;
+  }
+
+  /* Icons */
+  .icon {
+    --size: 1em;
+    height: var(--size);
+    width: var(--size);
+    display: inline-block;
+    color: inherit;
+    fill: currentColor;
+    line-height: 1;
+    flex-shrink: 0;
+    max-width: initial;
+  }
+  
+  .icon--is-spinning {
+    animation: icon-spin 1s infinite linear;
+  }
+  
+  @keyframes icon-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* inner shadow */
+  :where(.inner-glow, .inner-glow-top) { 
+    position: relative;
+  }
+
+  .inner-glow::after,
+  .inner-glow-top::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+  
+  .inner-glow::after { box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075); }
+  .inner-glow-top::after { box-shadow: var(inset 0 1px 0.5px hsla(0, 0%, 100%, 0.075)); }
+}
+
+/* #region CodyHouse components CSS */
+
+/* #endregion */
+
+@tailwind utilities;
+
+/* custom utility classes */
+@layer utilities {
+  /* overflow */
+  .momentum-scrolling { -webkit-overflow-scrolling: touch;}
+
+  /* perspective */
+  .perspective-xs { perspective: 250px; }
+  .perspective-sm { perspective: 500px; }
+  .perspective-md { perspective: 1000px; }
+  .perspective-lg { perspective: 1500px; }
+  .perspective-xl { perspective: 3000px; }
+
+  /* text shadow */
+  .text-shadow-xs { text-shadow: 0 1px 1px rgba(#000, 0.15); }
+  .text-shadow-sm { text-shadow: 0 1px 2px rgba(#000, 0.25); }
+  .text-shadow-md { text-shadow: 0 1px 2px rgba(#000, 0.1), 0 2px 4px rgba(#000, 0.2); }
+  .text-shadow-lg { text-shadow: 0 1px 4px rgba(#000, 0.1), 0 2px 8px rgba(#000, 0.15), 0 4px 16px rgba(#000, 0.2); }
+  .text-shadow-xl { text-shadow: 0 1px 4px rgba(#000, 0.1), 0 2px 8px rgba(#000, 0.15), 0 4px 16px rgba(#000, 0.2), 0 6px 24px rgba(#000, 0.25); }
+  .text-shadow-none { text-shadow: none; }
+}
